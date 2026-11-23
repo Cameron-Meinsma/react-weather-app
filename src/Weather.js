@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WeekdayTime from "./WeekdayTime";
 import axios from "axios";
 
 import "./Weather.css";
@@ -14,8 +15,7 @@ export default function Weather({ city, units }) {
 			humidity: response.data.temperature.humidity,
 			wind: response.data.wind.speed,
 			description: response.data.condition.description,
-			weekday: "Monday",
-			time: "03:00",
+			date_time: new Date(response.data.time * 1000),
 			city: response.data.city,
 			country: response.data.country,
 			icon_url: response.data.condition.icon_url,
@@ -61,22 +61,31 @@ export default function Weather({ city, units }) {
 						<h1 className="city-h1">{weatherData.city}</h1>
 						<ul>
 							<li>
-								<span className="weekday">{weatherData.weekday}</span>{" "}
-								<span className="time">{weatherData.time}</span>
+								<WeekdayTime dateTime={weatherData.date_time} />
 							</li>
-							<li className="description">{weatherData.description}</li>
 						</ul>
 					</div>
 				</div>
 				<div className="row other-weather-info">
-					<div className="col-6 humidity">
+					<div className="col-4 humidity">
 						<ul>
 							<li>Humidity: {weatherData.humidity}%</li>
 						</ul>
 					</div>
-					<div className="col-6 wind">
+					<div className="col-4 wind">
 						<ul>
 							<li>Wind: {weatherData.wind} km/h</li>
+						</ul>
+					</div>
+					<div className="col-4 description">
+						<ul>
+							<li>
+								{weatherData.description
+									.toLowerCase()
+									.replace(/(?:^|\s)\w/g, function (match) {
+										return match.toUpperCase();
+									})}
+							</li>
 						</ul>
 					</div>
 				</div>
