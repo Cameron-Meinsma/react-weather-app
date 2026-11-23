@@ -35,6 +35,10 @@
 	height: 64px;
 }
 
+.Weather .description {
+	font-size: 15px;
+}
+
 .Weather .country {
 	font-size: 15px;
 	margin: 0px;
