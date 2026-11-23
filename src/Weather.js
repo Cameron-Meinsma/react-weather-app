@@ -9,7 +9,6 @@ export default function Weather() {
 	// UseState
 	const [weatherData, setWeatherData] = useState({ loaded: false });
 	const [city, setCity] = useState("Los Angeles");
-	let units = "metric";
 
 	function seeWeatherData(response) {
 		setWeatherData({
@@ -28,7 +27,7 @@ export default function Weather() {
 	function getCityWeather() {
 		// API
 		const apiKey = "abd0f73t5848f341e6o2213e8b806178";
-		let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${units}`;
+		let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 		axios.get(apiUrl).then(seeWeatherData);
 	}
 
