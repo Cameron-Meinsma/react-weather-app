@@ -2,19 +2,20 @@ import React, { useState } from "react";
 
 export default function TemperatureUnitConversion({ weatherTempCelsius }) {
 	const [unit, setUnit] = useState("celsius");
-	const [celsiusActivity, setCelsiusActivity] = useState("active");
-	const [fahrenheitActivity, setFahrenheitActivity] = useState("inactive");
+	const [celsiusActivity, setCelsiusActivity] = useState("activeCelsius");
+	const [fahrenheitActivity, setFahrenheitActivity] =
+		useState("inactiveFahrenheit");
 
 	function toCelsius() {
 		setUnit("celsius");
-		setCelsiusActivity("active");
-		setFahrenheitActivity("inactive");
+		setCelsiusActivity("activeCelsius");
+		setFahrenheitActivity("inactiveFahrenheit");
 	}
 
 	function toFahrenheit() {
 		setUnit("fahrenheit");
-		setFahrenheitActivity("active");
-		setCelsiusActivity("inactive");
+		setFahrenheitActivity("activeFahrenheit");
+		setCelsiusActivity("inactiveCelsius");
 	}
 
 	if (unit === "celsius") {

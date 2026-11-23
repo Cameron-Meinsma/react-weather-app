@@ -1,6 +1,7 @@
 import React from "react";
 import WeekdayTime from "./WeekdayTime";
 import TemperatureUnitConversion from "./TemperatureUnitConversion";
+import DistanceUnitConversion from "./DistanceUnitConversion";
 
 export default function WeatherInfo({ weatherData }) {
 	return (
@@ -33,9 +34,7 @@ export default function WeatherInfo({ weatherData }) {
 					</ul>
 				</div>
 				<div className="col-4 wind">
-					<ul>
-						<li>Wind: {weatherData.wind} km/h</li>
-					</ul>
+					<DistanceUnitConversion wind={weatherData.wind} />
 				</div>
 				<div className="col-4 description">
 					<ul>
