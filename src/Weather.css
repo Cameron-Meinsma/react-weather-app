@@ -12,6 +12,7 @@
 	font-size: 24px;
 	font-weight: 100;
 	line-height: 29px;
+	margin-bottom: 10px;
 }
 
 .Weather form {
@@ -32,6 +33,11 @@
 
 .Weather img {
 	height: 64px;
+}
+
+.Weather .country {
+	font-size: 15px;
+	margin: 0px;
 }
 
 .Weather .city-info {
