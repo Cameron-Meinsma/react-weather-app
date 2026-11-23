@@ -6,7 +6,7 @@ export default function App() {
 	return (
 		<div className="App">
 			<div className="container">
-				<Weather city="Los Angeles" units="metric" />
+				<Weather />
 				<footer>
 					This project was coded by Cameron Meinsma and is{" "}
 					<a
