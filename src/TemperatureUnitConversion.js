@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function UnitConversion({ weatherTempCelsius }) {
+export default function TemperatureUnitConversion({ weatherTempCelsius }) {
 	const [unit, setUnit] = useState("celsius");
 	const [celsiusActivity, setCelsiusActivity] = useState("active");
 	const [fahrenheitActivity, setFahrenheitActivity] = useState("inactive");
@@ -19,7 +19,7 @@ export default function UnitConversion({ weatherTempCelsius }) {
 
 	if (unit === "celsius") {
 		return (
-			<div className="UnitConversion">
+			<div className="TemperatureUnitConversion">
 				<span className="temperature">{Math.round(weatherTempCelsius)}</span>
 				<span className="unit">
 					<button className={celsiusActivity} onClick={toCelsius}>
@@ -34,7 +34,7 @@ export default function UnitConversion({ weatherTempCelsius }) {
 		);
 	} else {
 		return (
-			<div className="UnitConversion">
+			<div className="TemperatureUnitConversion">
 				<span className="temperature">
 					{Math.round((weatherTempCelsius * 9) / 5 + 32)}
 				</span>

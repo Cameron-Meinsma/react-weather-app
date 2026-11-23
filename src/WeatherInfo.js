@@ -1,6 +1,6 @@
 import React from "react";
 import WeekdayTime from "./WeekdayTime";
-import UnitConversion from "./UnitConversion";
+import TemperatureUnitConversion from "./TemperatureUnitConversion";
 
 export default function WeatherInfo({ weatherData }) {
 	return (
@@ -10,7 +10,9 @@ export default function WeatherInfo({ weatherData }) {
 					<div className="imageflex">
 						<img src={weatherData.icon_url} alt={weatherData.description} />
 						<span className="imageflexcontent">
-							<UnitConversion weatherTempCelsius={weatherData.temperature} />
+							<TemperatureUnitConversion
+								weatherTempCelsius={weatherData.temperature}
+							/>
 						</span>
 					</div>
 				</div>
