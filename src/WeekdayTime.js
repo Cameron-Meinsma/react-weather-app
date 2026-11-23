@@ -41,7 +41,9 @@ export default function dateTime({ dateTime }) {
 
 	return (
 		<div className="WeekdayTime">
-			<span className="date-time-of-search">GMT+0100</span>
+			<span className="date-time-of-search">
+				Latest Weather Update in GMT+0100
+			</span>
 			<br />
 			{day}, {month} {date} {year} | {hours}:{minutes}
 		</div>
