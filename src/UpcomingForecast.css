@@ -1,0 +1,20 @@
+.UpcomingForecast {
+	margin-top: 20px;
+}
+
+.UpcomingForecast img {
+	max-block-size: 50px;
+}
+
+.UpcomingForecast .upcoming-forecast-single-day {
+	text-align: center;
+}
+
+.UpcomingForecast .max-temp {
+	color: rgb(85, 85, 85);
+}
+
+.UpcomingForecast .min-temp {
+	color: rgb(179, 179, 179);
+	margin-left: 5px;
+}
