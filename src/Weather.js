@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { MutatingDots } from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
+// import UpcomingForecast from "./UpcomingForecast";
 
 import "./Weather.css";
 
@@ -25,10 +26,11 @@ export default function Weather() {
 	}
 
 	function getCityWeather() {
-		// API
 		const apiKey = "abd0f73t5848f341e6o2213e8b806178";
-		let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-		axios.get(apiUrl).then(seeWeatherData);
+
+		// API current weather
+		let apiUrlCurrent = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+		axios.get(apiUrlCurrent).then(seeWeatherData);
 	}
 
 	function handleSubmit(event) {
@@ -68,6 +70,7 @@ export default function Weather() {
 			<div className="Weather">
 				{searchBar}
 				<WeatherInfo weatherData={weatherData} />
+				{/* <UpcomingForecast city={trueCity} /> */}
 			</div>
 		);
 	} else {

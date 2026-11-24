@@ -13,6 +13,7 @@ export default function WeatherInfo({ weatherData }) {
 			setUnit("metric");
 		}
 	}
+
 	return (
 		<div className="WeatherInfo">
 			<div className="row">
@@ -58,6 +59,7 @@ export default function WeatherInfo({ weatherData }) {
 					</ul>
 				</div>
 			</div>
+			<div className="upcoming-forecast"></div>
 		</div>
 	);
 }
