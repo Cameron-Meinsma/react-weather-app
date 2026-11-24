@@ -1,53 +1,37 @@
 import React, { useState } from "react";
 import axios from "axios";
+import DailyForecast from "./DailyForecast";
 
 import "./UpcomingForecast.css";
 
-export default function UpcomingForecast({ city }) {
-	const [forecastData, setForecastData] = useState({ loaded: false });
+export default function UpcomingForecast({ currentCity }) {
+	let [loaded, setLoaded] = useState(false);
+	let [upcomingForecast, setUpcomingForecast] = useState(null);
 
-	function seeForecastData(response) {
-		setForecastData({
-			loaded: true,
-			// weekday: new Date(response.data.daily[0].time * 1000),
-			min_temp: response.data.daily[0].temperature.minimum,
-			max_temp: response.data.daily[0].temperature.maximum,
-			icon_url: response.data.daily[0].condition.icon_url,
-			description: response.data.daily[0].condition.description,
-		});
+	function handleResponse(response) {
+		console.log(response.data);
+		setUpcomingForecast(response.data.daily);
+		setLoaded(true);
 	}
 
-	function getForecastWeather() {
-		// API upcoming weather
-		const apiKey = "abd0f73t5848f341e6o2213e8b806178";
-		const apiUrlUpcoming = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-		axios.get(apiUrlUpcoming).then(seeForecastData);
-	}
-
-	if (forecastData.loaded) {
+	if (loaded) {
 		return (
 			<div className="UpcomingForecast">
 				<div className="row">
-					<div className="col upcoming-forecast-single-day">
-						<div className="upcoming-forecast-day">Mon</div>
-						<img
-							className="upcoming-forecast-img"
-							src={forecastData.icon_url}
-							alt={forecastData.description}
-						/>
-						<div className="min-max-temp">
-							<span className="max-temp">
-								{Math.round(forecastData.max_temp)}°
-							</span>
-							<span className="min-temp">
-								{Math.round(forecastData.min_temp)}°
-							</span>
-						</div>
-					</div>
+					{upcomingForecast.map((dailyForecast, index) => {
+						return (
+							<div className="col upcoming-forecast-single-day" key={index}>
+								<DailyForecast data={upcomingForecast[index]} />
+							</div>
+						);
+					})}
 				</div>
 			</div>
 		);
 	} else {
-		getForecastWeather();
+		const apiKey = "abd0f73t5848f341e6o2213e8b806178";
+		let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${currentCity}&key=${apiKey}&units=metric`;
+		axios.get(apiUrl).then(handleResponse);
+		return null;
 	}
 }

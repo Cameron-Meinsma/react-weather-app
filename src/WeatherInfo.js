@@ -3,17 +3,7 @@ import WeekdayTime from "./WeekdayTime";
 import TemperatureUnitConversion from "./TemperatureUnitConversion";
 import DistanceUnitConversion from "./DistanceUnitConversion";
 
-export default function WeatherInfo({ weatherData }) {
-	const [unit, setUnit] = useState("metric");
-
-	function changeUnit() {
-		if (unit === "metric") {
-			setUnit("imperial");
-		} else {
-			setUnit("metric");
-		}
-	}
-
+export default function WeatherInfo({ weatherData, changeUnit, unit }) {
 	return (
 		<div className="WeatherInfo">
 			<div className="row">
@@ -59,7 +49,6 @@ export default function WeatherInfo({ weatherData }) {
 					</ul>
 				</div>
 			</div>
-			<div className="upcoming-forecast"></div>
 		</div>
 	);
 }

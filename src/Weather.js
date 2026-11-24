@@ -7,6 +7,15 @@ import UpcomingForecast from "./UpcomingForecast";
 import "./Weather.css";
 
 export default function Weather() {
+	const [unit, setUnit] = useState("metric");
+
+	function changeUnit() {
+		if (unit === "metric") {
+			setUnit("imperial");
+		} else {
+			setUnit("metric");
+		}
+	}
 	// UseState
 	const [weatherData, setWeatherData] = useState({ loaded: false });
 	const [city, setCity] = useState("Los Angeles");
@@ -69,8 +78,14 @@ export default function Weather() {
 		return (
 			<div className="Weather">
 				{searchBar}
-				<WeatherInfo weatherData={weatherData} />
-				<UpcomingForecast city={city} />
+				<WeatherInfo
+					weatherData={weatherData}
+					changeUnit={changeUnit}
+					unit={unit}
+				/>
+				<div className="upcoming-forecast">
+					<UpcomingForecast currentCity={weatherData.city} />
+				</div>
 			</div>
 		);
 	} else {
