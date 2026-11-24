@@ -41,13 +41,11 @@
 	padding: 0 !important;
 }
 
-.Weather .activeCelsius,
-.Weather .activeFahrenheit {
+.Weather .active {
 	color: rgb(56, 56, 210);
 }
 
-.Weather .inactiveCelsius,
-.Weather .inactiveFahrenheit {
+.Weather .inactive {
 	color: rgb(192, 192, 192);
 }
 
