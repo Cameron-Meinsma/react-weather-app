@@ -44,7 +44,7 @@ export default function WeatherInfo({ weatherData }) {
 					</ul>
 				</div>
 				<div className="col-4 wind">
-					<DistanceUnitConversion wind={weatherData.wind} />
+					<DistanceUnitConversion wind={weatherData.wind} unit={unit} />
 				</div>
 				<div className="col-4 description">
 					<ul>
