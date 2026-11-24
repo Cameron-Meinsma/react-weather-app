@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { MutatingDots } from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
-// import UpcomingForecast from "./UpcomingForecast";
+import UpcomingForecast from "./UpcomingForecast";
 
 import "./Weather.css";
 
@@ -70,7 +70,7 @@ export default function Weather() {
 			<div className="Weather">
 				{searchBar}
 				<WeatherInfo weatherData={weatherData} />
-				{/* <UpcomingForecast city={trueCity} /> */}
+				<UpcomingForecast city={city} />
 			</div>
 		);
 	} else {
