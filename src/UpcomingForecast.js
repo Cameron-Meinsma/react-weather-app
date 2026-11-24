@@ -4,7 +4,7 @@ import DailyForecast from "./DailyForecast";
 
 import "./UpcomingForecast.css";
 
-export default function UpcomingForecast({ currentCity }) {
+export default function UpcomingForecast({ currentCity, unit }) {
 	let [loaded, setLoaded] = useState(false);
 	let [upcomingForecast, setUpcomingForecast] = useState(null);
 
@@ -18,6 +18,12 @@ export default function UpcomingForecast({ currentCity }) {
 		setLoaded(true);
 	}
 
+	function getDailyForecast() {
+		const apiKey = "abd0f73t5848f341e6o2213e8b806178";
+		let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${currentCity}&key=${apiKey}&units=metric`;
+		axios.get(apiUrl).then(handleResponse);
+	}
+
 	if (loaded) {
 		return (
 			<div className="UpcomingForecast">
@@ -25,7 +31,7 @@ export default function UpcomingForecast({ currentCity }) {
 					{upcomingForecast.map((dailyForecast, index) => {
 						return (
 							<div className="col upcoming-forecast-single-day" key={index}>
-								<DailyForecast data={upcomingForecast[index]} />
+								<DailyForecast data={upcomingForecast[index]} unit={unit} />
 							</div>
 						);
 					})}
@@ -33,9 +39,7 @@ export default function UpcomingForecast({ currentCity }) {
 			</div>
 		);
 	} else {
-		const apiKey = "abd0f73t5848f341e6o2213e8b806178";
-		let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${currentCity}&key=${apiKey}&units=metric`;
-		axios.get(apiUrl).then(handleResponse);
+		getDailyForecast();
 		return null;
 	}
 }

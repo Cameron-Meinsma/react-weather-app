@@ -84,7 +84,7 @@ export default function Weather() {
 					unit={unit}
 				/>
 				<div className="upcoming-forecast">
-					<UpcomingForecast currentCity={weatherData.city} />
+					<UpcomingForecast currentCity={weatherData.city} unit={unit} />
 				</div>
 			</div>
 		);
