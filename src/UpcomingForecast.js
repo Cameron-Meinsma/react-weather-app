@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+import React, {
+	useState,
+	useEffect,
+	useLayoutEffect,
+	useEffectEvent,
+} from "react";
 import axios from "axios";
 import DailyForecast from "./DailyForecast";
 
@@ -7,6 +12,10 @@ import "./UpcomingForecast.css";
 export default function UpcomingForecast({ currentCity }) {
 	let [loaded, setLoaded] = useState(false);
 	let [upcomingForecast, setUpcomingForecast] = useState(null);
+
+	useEffect(() => {
+		setLoaded(false);
+	}, [currentCity]);
 
 	function handleResponse(response) {
 		console.log(response.data);
