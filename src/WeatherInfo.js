@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import WeekdayTime from "./WeekdayTime";
 import TemperatureUnitConversion from "./TemperatureUnitConversion";
 import DistanceUnitConversion from "./DistanceUnitConversion";
