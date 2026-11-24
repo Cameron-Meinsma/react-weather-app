@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import WeekdayTime from "./WeekdayTime";
 import TemperatureUnitConversion from "./TemperatureUnitConversion";
 import DistanceUnitConversion from "./DistanceUnitConversion";
 
 export default function WeatherInfo({ weatherData }) {
+	const [unit, setUnit] = useState("metric");
+
+	function changeUnit() {
+		if (unit === "metric") {
+			setUnit("imperial");
+		} else {
+			setUnit("metric");
+		}
+	}
 	return (
 		<div className="WeatherInfo">
 			<div className="row">
@@ -13,7 +22,9 @@ export default function WeatherInfo({ weatherData }) {
 						<span className="imageflexcontent">
 							<TemperatureUnitConversion
 								weatherTempCelsius={weatherData.temperature}
+								changeUnit={changeUnit}
 							/>
+							{console.log(unit)}
 						</span>
 					</div>
 				</div>

@@ -1,33 +1,26 @@
 import React, { useState } from "react";
 
-export default function TemperatureUnitConversion({ weatherTempCelsius }) {
-	const [unit, setUnit] = useState("celsius");
-	const [celsiusActivity, setCelsiusActivity] = useState("activeCelsius");
-	const [fahrenheitActivity, setFahrenheitActivity] =
-		useState("inactiveFahrenheit");
-
-	function toCelsius() {
-		setUnit("celsius");
-		setCelsiusActivity("activeCelsius");
-		setFahrenheitActivity("inactiveFahrenheit");
+export default function TemperatureUnitConversion({
+	weatherTempCelsius,
+	changeUnit,
+}) {
+	const [unit, setUnit] = useState("metric");
+	function handleChange(event) {
+		if (unit === "metric") {
+			setUnit("imperial");
+		} else {
+			setUnit("metric");
+		}
+		changeUnit(event.target.value);
 	}
 
-	function toFahrenheit() {
-		setUnit("fahrenheit");
-		setFahrenheitActivity("activeFahrenheit");
-		setCelsiusActivity("inactiveCelsius");
-	}
-
-	if (unit === "celsius") {
+	if (unit === "metric") {
 		return (
 			<div className="TemperatureUnitConversion">
 				<span className="temperature">{Math.round(weatherTempCelsius)}</span>
 				<span className="unit">
-					<button className={celsiusActivity} onClick={toCelsius}>
-						°C
-					</button>{" "}
-					|{" "}
-					<button className={fahrenheitActivity} onClick={toFahrenheit}>
+					<button className="active">°C</button> |{" "}
+					<button className="inactive" onClick={handleChange}>
 						°F
 					</button>
 				</span>
@@ -40,13 +33,10 @@ export default function TemperatureUnitConversion({ weatherTempCelsius }) {
 					{Math.round((weatherTempCelsius * 9) / 5 + 32)}
 				</span>
 				<span className="unit">
-					<button className={celsiusActivity} onClick={toCelsius}>
+					<button className="inactive" onClick={handleChange}>
 						°C
 					</button>{" "}
-					|{" "}
-					<button className={fahrenheitActivity} onClick={toFahrenheit}>
-						°F
-					</button>
+					| <button className="active">°F</button>
 				</span>
 			</div>
 		);
