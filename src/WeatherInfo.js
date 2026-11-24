@@ -24,7 +24,6 @@ export default function WeatherInfo({ weatherData }) {
 								weatherTempCelsius={weatherData.temperature}
 								changeUnit={changeUnit}
 							/>
-							{console.log(unit)}
 						</span>
 					</div>
 				</div>
