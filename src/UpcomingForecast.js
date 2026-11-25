@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import DailyForecast from "./DailyForecast";
-
+import DailyForecast from "./DailyForecast.js";
 import "./UpcomingForecast.css";
+import axios from "axios";
 
 export default function UpcomingForecast({ currentCity, unit }) {
 	let [loaded, setLoaded] = useState(false);
@@ -20,6 +19,7 @@ export default function UpcomingForecast({ currentCity, unit }) {
 
 	function getDailyForecast() {
 		const apiKey = "abd0f73t5848f341e6o2213e8b806178";
+		console.log(apiKey);
 		let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${currentCity}&key=${apiKey}&units=metric`;
 		axios.get(apiUrl).then(handleResponse);
 	}

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { MutatingDots } from "react-loader-spinner";
-import WeatherInfo from "./WeatherInfo";
-import UpcomingForecast from "./UpcomingForecast";
-import WeekdayTime from "./WeekdayTime";
+import WeatherInfo from "./WeatherInfo.js";
+import UpcomingForecast from "./UpcomingForecast.js";
 
 import "./Weather.css";
+
+import axios from "axios";
 
 export default function Weather() {
 	const [unit, setUnit] = useState("metric");
@@ -86,9 +86,6 @@ export default function Weather() {
 				/>
 				<div className="upcoming-forecast">
 					<UpcomingForecast currentCity={weatherData.city} unit={unit} />
-				</div>
-				<div className="latest-update">
-					<WeekdayTime dateTime={weatherData.date_time} unit={unit} />
 				</div>
 			</div>
 		);

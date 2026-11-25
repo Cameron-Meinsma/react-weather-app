@@ -50,8 +50,13 @@ export default function dateTime({ dateTime, unit }) {
 		return (
 			<div className="WeekdayTime">
 				<span className="date-time-of-search">
-					Latest Weather Update: {day}, {month} {date} {year} |{" "}
-					{to24Hours(hours, minutes)} GMT+0100
+					<ul>
+						<li>Latest Weather Update:</li>
+						<li>
+							{day}, {month} {date} {year}
+						</li>
+						<li>{to24Hours(hours, minutes)} GMT+0100</li>
+					</ul>
 				</span>
 			</div>
 		);
@@ -59,8 +64,13 @@ export default function dateTime({ dateTime, unit }) {
 		return (
 			<div className="WeekdayTime">
 				<span className="date-time-of-search">
-					Latest Weather Update: {day}, {month} {date} {year} |{" "}
-					{to12Hours(hours, minutes)} GMT+0100
+					<ul>
+						<li>Latest Weather Update:</li>
+						<li>
+							{day}, {month} {date} {year}
+						</li>
+						<li>{to12Hours(hours, minutes)} GMT+0100</li>
+					</ul>
 				</span>
 			</div>
 		);
