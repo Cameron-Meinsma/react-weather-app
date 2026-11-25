@@ -3,6 +3,7 @@ import axios from "axios";
 import { MutatingDots } from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
 import UpcomingForecast from "./UpcomingForecast";
+import WeekdayTime from "./WeekdayTime";
 
 import "./Weather.css";
 
@@ -85,6 +86,9 @@ export default function Weather() {
 				/>
 				<div className="upcoming-forecast">
 					<UpcomingForecast currentCity={weatherData.city} unit={unit} />
+				</div>
+				<div className="latest-update">
+					<WeekdayTime dateTime={weatherData.date_time} unit={unit} />
 				</div>
 			</div>
 		);
