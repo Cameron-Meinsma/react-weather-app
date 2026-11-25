@@ -71,6 +71,27 @@ export default function Weather() {
 		</form>
 	);
 
+	const gitHubLink = (
+		<footer>
+			This project was made with ♥️ by{" "}
+			<a
+				href="https://www.linkedin.com/in/cameron-meinsma"
+				target="_blank"
+				rel="noreferrer"
+			>
+				Cameron Meinsma
+			</a>{" "}
+			and is open-sourced on{" "}
+			<a
+				href="https://github.com/Cameron-Meinsma/react-weather-app.git"
+				target="_blank"
+				rel="noreferrer"
+			>
+				GitHub
+			</a>
+		</footer>
+	);
+
 	if (weatherData.loaded) {
 		return (
 			<div className="Weather">
@@ -83,6 +104,7 @@ export default function Weather() {
 				<div className="upcoming-forecast">
 					<UpcomingForecast currentCity={weatherData.city} unit={unit} />
 				</div>
+				{gitHubLink}
 			</div>
 		);
 	} else {

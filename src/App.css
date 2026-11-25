@@ -8,3 +8,7 @@
 	margin-top: 15px;
 	text-align: center;
 }
+
+.App footer a {
+	color: rgb(56, 56, 210);
+}
