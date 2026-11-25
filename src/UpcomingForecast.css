@@ -1,13 +1,11 @@
-.UpcomingForecast {
-	margin-top: 20px;
-}
-
 .UpcomingForecast img {
 	max-block-size: 50px;
+	margin-top: 20px;
 }
 
 .UpcomingForecast .upcoming-forecast-single-day {
 	text-align: center;
+	padding-top: 20px;
 }
 
 .UpcomingForecast .max-temp {
@@ -16,5 +14,20 @@
 
 .UpcomingForecast .min-temp {
 	color: rgb(179, 179, 179);
-	margin-left: 5px;
+}
+
+.UpcomingForecast .todays-daily-forecast {
+	background-color: rgb(255, 255, 255);
+	border-radius: 0px 0px 20px 20px;
+	box-shadow: 20px -20px #ffffff;
+}
+
+/* background-color: #f3f3f3; */
+.UpcomingForecast .tomorrows-daily-forecast {
+	background-color: #f3f3f3;
+	border-radius: 10px 0px 0px 0px;
+}
+
+.UpcomingForecast .all-other-daily-forecasts {
+	background-color: #f3f3f3;
 }

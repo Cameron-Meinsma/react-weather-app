@@ -27,13 +27,36 @@ export default function UpcomingForecast({ currentCity, unit }) {
 	if (loaded) {
 		return (
 			<div className="UpcomingForecast">
-				<div className="row">
+				<div className="row upcoming-forecast-row">
 					{upcomingForecast.map((dailyForecast, index) => {
-						return (
-							<div className="col upcoming-forecast-single-day" key={index}>
-								<DailyForecast data={upcomingForecast[index]} unit={unit} />
-							</div>
-						);
+						if (index === 0) {
+							return (
+								<div
+									className="col upcoming-forecast-single-day todays-daily-forecast"
+									key={index}
+								>
+									<DailyForecast data={upcomingForecast[index]} unit={unit} />
+								</div>
+							);
+						} else if (index === 1) {
+							return (
+								<div
+									className="col upcoming-forecast-single-day tomorrows-daily-forecast"
+									key={index}
+								>
+									<DailyForecast data={upcomingForecast[index]} unit={unit} />
+								</div>
+							);
+						} else {
+							return (
+								<div
+									className="col upcoming-forecast-single-day all-other-daily-forecasts"
+									key={index}
+								>
+									<DailyForecast data={upcomingForecast[index]} unit={unit} />
+								</div>
+							);
+						}
 					})}
 				</div>
 			</div>

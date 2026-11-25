@@ -1,10 +1,9 @@
 .Weather {
 	font-family: arial, sans-serif;
-	border: 5px solid #f1f1f1;
-	padding: 16px;
-	margin: 150px -25px;
-	border-radius: 7.5px;
+	padding: 40px 50px;
+	border-radius: 20px;
 	color: rgb(148, 148, 148);
+	background-color: #f3f3f3;
 }
 
 .Weather h1 {
@@ -26,7 +25,6 @@
 }
 
 .Weather li {
-	font-size: 16px;
 	font-weight: 100;
 	line-height: 19px;
 	list-style: none;
@@ -48,10 +46,6 @@
 
 .Weather .inactive {
 	color: rgb(192, 192, 192);
-}
-
-.Weather .description {
-	font-size: 15px;
 }
 
 .Weather .country {
@@ -86,12 +80,21 @@
 }
 
 .Weather .other-weather-info {
-	margin-top: 25px;
+	font-size: 20px;
+	padding: 20px;
+	margin: auto 25px;
 	text-align: center;
 }
 
+.WeatherInfo {
+	background-color: rgb(255, 255, 255);
+	margin-left: -12px;
+	padding: 20px;
+	border-radius: 20px 20px 20px 0px;
+}
+
 .Weather .latest-update {
-	margin-top: 20px;
+	padding-top: 20px;
 	margin-bottom: 0px;
 	text-align: center;
 }
