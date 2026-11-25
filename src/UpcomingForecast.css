@@ -1,11 +1,14 @@
 .UpcomingForecast img {
 	max-block-size: 50px;
-	margin-top: 20px;
 }
 
 .UpcomingForecast .upcoming-forecast-single-day {
 	text-align: center;
 	padding-top: 20px;
+}
+
+.UpcomingForecast .min-max-temp {
+	padding-bottom: 17.5px;
 }
 
 .UpcomingForecast .max-temp {
