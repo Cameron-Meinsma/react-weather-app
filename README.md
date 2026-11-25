@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# React Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**This weather app was built using React and Node.js and is hosted on [Netlify](https://cameron-react-weather-app.netlify.app/)**.
 
-## Available Scripts
+### Functionalities
 
-In the project directory, you can run:
+1. Showing the latest weather data of the next seven days, including today;
+2. A city search engine;
+3. And the ability to convert between metric and imperial units.
 
-### `npm start`
+### 1. Getting the Latest Weather Data
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It utilizes the [SheCodes](https://www.shecodes.io/) weather API to get the latest weather data, in metric units, of any city.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The following data is shown on the app:
 
-### `npm test`
+1. The temperature;
+2. The country;
+3. The city;
+4. The weather icon;
+5. The associated weather description;
+6. The humidity;
+7. The wind;
+8. And the future weather forecast of the next seven days, including today. This forecast includes the minimum and maximum temperature, as well as the abbreviated day and the weather icon.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Using the City Search Engine
 
-### `npm run build`
+If the search engine can find the city, it will show the weather data of said city. Otherwise, it will not update the weather data.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Units Conversion
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It is automatically set to metric. However, by clicking on the _°F_, the app will convert the units to imperial. By clicking on _°C_, it will switch back to metric. The units conversion will update the following:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. The temperature (from Celsius to Fahrenheit, or vice versa), including the forecast of the upcoming days;
+2. The wind (from km/h to mph, or vice versa);
+3. And the latest weather update time (from 24h to 12h time, or vice versa).
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To check out the app, see: [https://cameron-react-weather-app.netlify.app/](https://cameron-react-weather-app.netlify.app/).
