@@ -21,7 +21,7 @@ export default function WeatherInfo({ weatherData, changeUnit, unit }) {
 					</div>
 					<div className="col-7 city-info">
 						<h5 className="country">{weatherData.country}</h5>
-						<h1 className="city-h1">{weatherData.city}</h1>
+						<h2 className="city-h2">{weatherData.city}</h2>
 					</div>
 				</div>
 				<div className="row other-weather-info">

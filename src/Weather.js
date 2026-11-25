@@ -95,6 +95,7 @@ export default function Weather() {
 	if (weatherData.loaded) {
 		return (
 			<div className="Weather">
+				<h1>React Weather App</h1>
 				{searchBar}
 				<WeatherInfo
 					weatherData={weatherData}
