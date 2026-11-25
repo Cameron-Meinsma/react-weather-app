@@ -1,6 +1,6 @@
 # React Weather App
 
-**This weather app was built using React and Node.js and is hosted on [Netlify](https://cameron-react-weather-app.netlify.app/)**.
+**This weather app was built using [React](https://react.dev/) and [Node.js](https://nodejs.org/en) and is [hosted](https://cameron-react-weather-app.netlify.app/) on [Netlify](https://www.netlify.com/).**
 
 ### Functionalities
 
