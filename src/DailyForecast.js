@@ -28,7 +28,7 @@ export default function DailyForecast({ data, unit }) {
 				<div className="min-max-temp">
 					<span className="max-temp">
 						{Math.round(data.temperature.maximum)}°
-					</span>{" "}
+					</span>
 					<span className="min-temp">
 						{Math.round(data.temperature.minimum)}°
 					</span>
@@ -47,7 +47,7 @@ export default function DailyForecast({ data, unit }) {
 				<div className="min-max-temp">
 					<span className="max-temp">
 						{toFahrenheit(data.temperature.maximum)}°
-					</span>{" "}
+					</span>
 					<span className="min-temp">
 						{toFahrenheit(data.temperature.minimum)}°
 					</span>

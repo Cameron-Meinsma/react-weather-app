@@ -55,6 +55,30 @@
 
 .Weather .city-info {
 	text-align: right;
+	padding-right: 24px;
+}
+
+.Weather .city-search-btn {
+	background-color: rgb(146, 146, 146);
+	border-radius: 7.5px;
+	border: 3px solid rgb(146, 146, 146);
+	padding: 10px 34.5px;
+	color: #ffffff;
+	text-align: center;
+}
+
+.Weather .city-search-textbox {
+	padding: 10px;
+	background-color: #ffffff;
+	border: 3px solid #fff;
+	border-radius: 7.5px;
+}
+
+.Weather .city-search-btn:hover {
+	transition: all 200ms ease-in-out;
+	background-color: #ffffff;
+	border: 3px solid rgb(146, 146, 146);
+	color: rgb(146, 146, 146);
 }
 
 .Weather .temperature {
@@ -81,14 +105,14 @@
 
 .Weather .other-weather-info {
 	font-size: 15px;
-	padding: 15px 0px 15px;
-	margin: 20px auto 10px;
+	padding: 7.5px 12px;
+	margin-bottom: 5px;
 }
 
 .WeatherInfo {
 	background-color: rgb(255, 255, 255);
-	margin-left: -12px;
-	padding: 30px 30px 0px 10px;
+	margin: auto -12px;
+	padding: 30px 10px 10px;
 	border-radius: 20px 20px 20px 0px;
 	overflow: hidden;
 }
@@ -105,5 +129,5 @@
 
 .Weather .latest-update {
 	text-align: right;
-	padding: 0;
+	padding-right: -12px;
 }

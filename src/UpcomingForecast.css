@@ -17,6 +17,7 @@
 
 .UpcomingForecast .min-temp {
 	color: rgb(179, 179, 179);
+	padding-left: 3px;
 }
 
 .UpcomingForecast .todays-daily-forecast {
